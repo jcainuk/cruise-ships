@@ -1,0 +1,22 @@
+{
+  "name": "cruise-ships",
+  "version": "1.0.0",
+  "description": "A project to practise building and working with many JavaScript Objects to allow a cruise ship to operate",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcainuk/cruise-ships.git"
+  },
+  "author": "Jonathan Cain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcainuk/cruise-ships/issues"
+  },
+  "homepage": "https://github.com/jcainuk/cruise-ships#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
