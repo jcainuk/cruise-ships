@@ -10,6 +10,12 @@ Ship.prototype.setSail = function () {
     
 };
 
+Ship.prototype.dock = function (port) {
+   
+    this.currentPort = port;
+    
+};
+
 
 
 
