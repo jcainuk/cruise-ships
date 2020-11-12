@@ -9,7 +9,8 @@ describe('Itinerary', () => {
 
         const itinerary = new Itinerary(dover, calais);
 
-		expect(itinerary.ports.toEqual([dover, calais]);
+    expect(itinerary.ports).toEqual([dover, calais])
+   
+	});
 	});
 
-});
