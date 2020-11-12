@@ -29,3 +29,17 @@ it('can set sail', () => {
 });
 });
 
+//
+describe('dock', () => {
+	it('can dock at a different port', () => {
+		
+		const dover = new Port('Dover');
+		const ship = new Ship(dover);
+
+		const calais = new Port('Calais');
+		ship.dock(calais);
+
+		expect(ship.currentPort).toBe(calais);
+	});
+	});
+
