@@ -1,6 +1,6 @@
-function Itinerary(port1, port2){
+function Itinerary(ports){
 
-    this.ports = [port1, port2];
+    this.ports = ports;
 }
 
 
