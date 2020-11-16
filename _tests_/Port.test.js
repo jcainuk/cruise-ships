@@ -14,3 +14,16 @@ describe('Port', () => {
 	});
 
 });
+
+describe('addShip', () => {
+	it('can add a ship', () => {
+
+	const port = new Port('Dover');
+	const ship = {};
+
+	port.addShip(ship);
+
+		expect(port.ships).toContain(ship);
+	});
+
+});
