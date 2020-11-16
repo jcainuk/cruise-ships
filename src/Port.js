@@ -9,5 +9,10 @@ Port.prototype.addShip = function (ship) {
      
 };
 
+Port.prototype.removeShip = function (ship) {
+    this.ships.pop(ship);
+      
+ };
+
 
 module.exports = Port;
