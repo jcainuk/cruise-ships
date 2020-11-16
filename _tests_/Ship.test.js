@@ -27,8 +27,10 @@ describe('Ship', () => {
 describe('setSail', () => {
 it('can set sail', () => {
 	
-	const port = new Port('Dover');
-	const itinerary = new Itinerary([port]);
+	const dover = new Port('Dover');
+	const calais = new Port('Calais');
+	  
+	const itinerary = new Itinerary([dover, calais]);
 	const ship = new Ship(itinerary);
 
 	ship.setSail();
