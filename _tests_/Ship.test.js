@@ -26,7 +26,8 @@ it('can set sail', () => {
 
 
 	ship.setSail();
-	expect(ship.startingPort).toBeFalsy();
+	expect(ship.currentPort).toBeFalsy();
+	expect(ship.previousPort).toBe(port);
 });
 });
 
