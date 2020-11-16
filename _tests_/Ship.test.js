@@ -35,6 +35,17 @@ it('can set sail', () => {
 	expect(ship.currentPort).toBeFalsy();
 	
 });
+it('can\'t sail further than its itinerary', () => {
+	const dover = new Port('Dover');
+	const calais = new Port('Calais');
+	const itinerary = new Itinerary([dover, calais]);
+	const ship = new Ship(itinerary);
+  
+	ship.setSail();
+	ship.dock();
+  
+	expect(() => ship.setSail()).toThrowError('End of itinerary reached');
+  });
 });
 
 //
@@ -52,4 +63,6 @@ describe('dock', () => {
 		expect(ship.currentPort).toBe(calais);
 	});
 	});
+
+	
 
