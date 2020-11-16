@@ -23,12 +23,12 @@ describe('setSail', () => {
 it('can set sail', () => {
 	
 	const port = new Port('Dover');
-	const ship = new Ship(port);
-
+	const itinerary = new Itinerary([port]);
+	const ship = new Ship(itinerary);
 
 	ship.setSail();
 	expect(ship.currentPort).toBeFalsy();
-	expect(ship.previousPort).toBe(port);
+	
 });
 });
 
@@ -37,10 +37,12 @@ describe('dock', () => {
 	it('can dock at a different port', () => {
 		
 		const dover = new Port('Dover');
-		const ship = new Ship(dover);
+  		const calais = new Port('Calais');
+  		const itinerary = new Itinerary([dover, calais])
+  		const ship = new Ship(itinerary);
 
-		const calais = new Port('Calais');
-		ship.dock(calais);
+  		ship.setSail();
+  		ship.dock();
 
 		expect(ship.currentPort).toBe(calais);
 	});
