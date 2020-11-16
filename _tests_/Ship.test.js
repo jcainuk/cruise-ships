@@ -73,7 +73,6 @@ it('can\'t sail further than its itinerary', () => {
   });
 });
 
-//
 describe('dock', () => {
 	it('can dock at a different port', () => {
 		
