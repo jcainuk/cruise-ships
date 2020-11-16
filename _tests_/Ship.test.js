@@ -43,7 +43,7 @@ it('can set sail', () => {
 
 	ship.setSail();
 	expect(ship.currentPort).toBeFalsy();
-	
+	expect(dover.ships).not.toContain(ship);
 });
 it('can\'t sail further than its itinerary', () => {
 	const dover = new Port('Dover');
