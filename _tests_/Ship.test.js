@@ -10,7 +10,8 @@ describe('Ship', () => {
 	it('has a starting port', () => {
 		
 		const port = new Port('Dover');
-		const ship = new Ship(port);
+  		const itinerary = new Itinerary([port]);
+  		const ship = new Ship(itinerary);
 
 		expect(ship.currentPort).toBe(port);
 	});
