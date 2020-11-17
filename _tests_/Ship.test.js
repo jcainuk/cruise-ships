@@ -12,12 +12,32 @@ describe('Ship', () => {
   			let dover;
   			let calais;
 			let itinerary;
-			  
+			let port;
 		beforeEach(() => {
-				const dover = new Port('Dover');
-				const calais = new Port('Calais');
-				const itinerary = new Itinerary([dover, calais]);
-				const ship = new Ship(itinerary);
+				// const dover = new Port('Dover');
+				// const calais = new Port('Calais');
+				// const itinerary = new Itinerary([dover, calais]);
+				// const ship = new Ship(itinerary);
+				port = {
+					removeShip: jest.fn(),
+					addShip: jest.fn(),
+				  };
+				
+				  dover = {
+					...port,
+					name: 'Dover',
+					ships: []
+				  };
+				
+				  calais = {
+					...port,
+					name: 'Calais',
+					ships: []
+				  };
+				
+				  itinerary = new Itinerary([dover, calais]);
+				  ship = new Ship(itinerary);
+
 			  });
 		it('can be instantiated', () => {
 		
@@ -37,22 +57,24 @@ describe('Ship', () => {
 			});
 		it('can set sail', () => {
 	
-				const dover = new Port('Dover');
-				const calais = new Port('Calais');
+				// const dover = new Port('Dover');
+				// const calais = new Port('Calais');
 				  
-				const itinerary = new Itinerary([dover, calais]);
-				const ship = new Ship(itinerary);
+				// const itinerary = new Itinerary([dover, calais]);
+				// const ship = new Ship(itinerary);
 			
 				ship.setSail();
 				expect(ship.currentPort).toBeFalsy();
-				expect(dover.ships).not.toContain(ship);
+				//expect(dover.ships).not.toContain(ship);
+				expect(dover.removeShip).toHaveBeenCalledWith(ship);
 			});
 		it('gets added to port on instantiation', () => {
-				const dover = new Port('Dover');
-				const itinerary = new Itinerary([dover]);
-				const ship = new Ship(itinerary);
+				// const dover = new Port('Dover');
+				// const itinerary = new Itinerary([dover]);
+				// const ship = new Ship(itinerary);
 			  
-				expect(dover.ships).toContain(ship);
+				//expect(dover.ships).toContain(ship);
+				expect(port.addShip).toHaveBeenCalledWith(ship);
 			  });
 		});  	
 	  });	
