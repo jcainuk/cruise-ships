@@ -75,6 +75,7 @@ describe('Ship', () => {
 			  
 				//expect(dover.ships).toContain(ship);
 				expect(port.addShip).toHaveBeenCalledWith(ship);
+				expect(calais.addShip).toHaveBeenCalledWith(ship);
 			  });
 		});  	
 	  });	
@@ -108,6 +109,7 @@ describe('dock', () => {
 
 		expect(ship.currentPort).toBe(calais);
 		expect(calais.ships).toContain(ship);
+		
 		
 	});
 	});
