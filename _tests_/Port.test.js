@@ -16,7 +16,7 @@ describe('Port', () => {
 	});
 
 	it('has a name property', () => {
-		//const port = new Port('Calais');
+		
 		expect(port).toHaveProperty('name','Calais');
 	});
 
@@ -26,7 +26,7 @@ describe('addShip', () => {
 	it('can add a ship', () => {
 
 	const port = new Port('Dover');
-	const ship = {};
+	const ship = jest.fn();
 
 	port.addShip(ship);
 
