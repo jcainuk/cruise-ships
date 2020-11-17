@@ -40,8 +40,8 @@ describe('removeShip', () => {
 	it('can remove a ship', () => {
 
 	const port = new Port('Dover');
-	const titanic = {};
-	const queenMary= {};
+	const titanic = jest.fn();
+	const queenMary= jest.fn();
 
 	port.addShip(titanic);
 	port.addShip(queenMary);
