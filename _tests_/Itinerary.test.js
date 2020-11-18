@@ -3,29 +3,25 @@ const Port = require('../src/Port.js');
 const Itinerary = require('../src/Itinerary.js');
 
 describe('Itinerary', () => {
+  it('can be instantiated', () => {
+    expect(new Itinerary()).toBeInstanceOf(Object);
+  });
 
-    it('can be instantiated', () => {
-        expect(new Itinerary()).toBeInstanceOf(Object);
-    });
+  it('has a ports property', () => {
+    const dover = new Port('Dover');
+    const calais = new Port('Calais');
 
-    it('has a ports property', () => {
+    const itinerary = new Itinerary([calais, dover]);
 
-        const dover = new Port('Dover');
-        const calais = new Port('Calais');
+    expect(itinerary).toHaveProperty('ports');
+  });
 
-        const itinerary = new Itinerary([calais, dover]);
+  it('can have ports', () => {
+    const dover = jest.fn();// new Port('Dover');
+    const calais = jest.fn();// new Port('Calais');
 
-        expect(itinerary).toHaveProperty('ports');
-    });
+    const itinerary = new Itinerary([dover, calais]);
 
-    it('can have ports', () => {
-        const dover = jest.fn();//new Port('Dover');
-        const calais = jest.fn();//new Port('Calais');
-
-        const itinerary = new Itinerary([dover, calais]);
-
-        expect(itinerary.ports).toEqual([dover, calais])
-
-    });
+    expect(itinerary.ports).toEqual([dover, calais]);
+  });
 });
-
