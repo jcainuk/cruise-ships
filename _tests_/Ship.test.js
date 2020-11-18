@@ -34,8 +34,11 @@ describe('Ship', () => {
 					name: 'Calais',
 					ships: []
 				};
+				itinerary = {
+					ports: [dover, calais]
+				};
 
-				itinerary = new Itinerary([dover, calais]);
+
 				ship = new Ship(itinerary);
 
 			});
