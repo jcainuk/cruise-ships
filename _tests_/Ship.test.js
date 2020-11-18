@@ -105,7 +105,7 @@ describe('dock', () => {
 		const dover = new Port('Dover');
 		const calais = new Port('Calais');
 	
-		itinerary = {
+		const itinerary = {
 			ports: [dover, calais]
 		};
 
